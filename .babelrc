@@ -1,0 +1,6 @@
+{
+  "stage": 2,
+  "blacklist": ["regenerator"],
+  "loose": ["es6.classes"],
+  "optional": ["es7.classProperties", "es7.decorators"]
+}
