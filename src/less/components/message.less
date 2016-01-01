@@ -1,0 +1,68 @@
+.message {
+  text-align: center;
+  padding: 50px 50px 100px;
+  margin: 0 50px 150px;
+  position: relative;
+
+  @media @mobile {
+    padding: 0 0 40px;
+    margin:0 12px 120px;
+  }
+
+  h2 {
+    margin: 0;
+    font-size:2em;
+  }
+
+  &-subtitle {
+
+  }
+
+  &-badge {
+    position: absolute;
+    left:100%;
+    top:100%;
+
+    &-ok {
+      background: url(../images/happy-wurst.png) no-repeat 0 0;
+      width: 229px;
+      height: 211px;
+      margin: -103px 0 0 -177px;
+
+      @media @mobile {
+        width:150px;
+        height:150px;
+        background-size:100%;
+        margin: -60px 0 0 -130px;
+      }
+
+    }
+    &-bad {
+      background: url(../images/burnt-wurst.png) no-repeat 0 0;
+      width: 229px;
+      height: 211px;
+      margin: -103px 0 0 -177px;
+
+      @media @mobile {
+        width:150px;
+        height:150px;
+        background-size:100%;
+        margin: -60px 0 0 -130px;
+      }
+
+    }
+  }
+
+  &-card {
+    background: #fff;
+    border-radius: @radius;
+    margin: 0 0 150px;
+    padding: 100px 50px;
+
+    @media @mobile {
+      padding: 30px 16px 50px;
+      margin:0 0 100px;
+    }
+
+  }
+}

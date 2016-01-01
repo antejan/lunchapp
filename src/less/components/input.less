@@ -1,0 +1,32 @@
+.input {
+  margin: @vspace 0;
+  position: relative;
+
+  input {
+    padding: (@vspace/2 + 24) @hspace/1.2 @vspace/1.5;
+    background: @input;
+    border: none;
+    outline: none;
+    border-radius: @radius;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+
+    &:focus {
+      background: @input-focused;
+    }
+  }
+
+  label {
+    position: absolute;
+    left: @hspace/1.2;
+    top: @vspace/1.5;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: .75em;
+    opacity:.75;
+    cursor: text;
+    letter-spacing: .07em;
+  }
+
+}

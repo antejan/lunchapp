@@ -1,0 +1,43 @@
+.btn {
+  border: none 0;
+  padding: @vspace/4 @hspace*2;
+  margin: 0;
+  background: @btn;
+  border-radius: @radius;
+  box-shadow: 0 2px 0 0 @btn-shadow;
+  color: #fff;
+  text-align: center;
+  font-weight:bold;
+  outline: none;
+  position: relative;
+  transition:background .1s ease;
+
+  &:hover {
+    background: lighten(@btn, 2%);
+  }
+
+  &:active {
+    top:1px;
+    box-shadow: 0 1px 0 0 lighten(@btn-shadow, 10%);
+    transition: none;
+  }
+
+  &-L {
+    padding: @vspace/2 @hspace*3;
+  }
+
+  &-secondary {
+    color: @text;
+    background: none !important;
+    box-shadow: none !important;
+    font-weight: 300;
+    padding: @vspace/2 @hspace;
+    opacity:.6;
+    transition:opacity .1s ease;
+
+    &:hover {
+      opacity:1;
+    }
+  }
+
+}

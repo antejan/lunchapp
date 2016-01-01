@@ -11,11 +11,12 @@ export default function (gulp) {
         cssPath = path.join(assets, 'css'),
         fontPath = path.join(assets, 'fonts'),
         imagesPath = path.join(assets, 'images'),
-
+        distFiles = path.join(dist, '**/*'),
         baseUrl = 'assets/' + version;
 
     let config = {
         dist: dist,
+        distFiles: distFiles,
         assets: assets,
         version: version,
         baseUrl: baseUrl,
@@ -29,9 +30,9 @@ export default function (gulp) {
             options: {
                 ieCompat: false,
                 paths: [
-                    path.join(__dirname, '../src/less'),
-                    path.join(__dirname, '../node_modules/bootstrap/less')
-                ]
+                    path.join(__dirname, '../src/less')
+                ],
+                relativeUrls: false
             }
         },
 
@@ -39,6 +40,11 @@ export default function (gulp) {
             src: './src/*.html',
             dest: 'dist',
             baseUrl: baseUrl
+        },
+
+        images: {
+            src: './src/images/**/*',
+            dest: imagesPath
         }
 
     };

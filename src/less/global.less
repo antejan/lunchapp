@@ -1,0 +1,75 @@
+/* global */
+body {
+  background: @page-bg;
+  color: @text;
+  font: 300 100%/1.4 'Source Sans Pro', sans-serif;
+}
+
+.logo {
+  position: absolute;
+  right: 30px;
+  bottom: 20px;
+  pointer-events: none;
+  margin:0;
+
+  @media @mobile {
+    right: auto;
+    left: 50%;
+    bottom: 5px;
+    margin-left: -45px;
+
+    img {
+      width: 120px;
+    }
+  }
+}
+
+/* layout */
+html, body {
+  height: 100%;
+}
+
+#content {
+  min-height:100%;
+  position: relative;
+}
+
+.wrapper {
+  min-height: 100%;
+  max-width: 36em;
+  padding: 5em 2em;
+  margin: 0 auto;
+
+  @media @mobile {
+    padding: 2em @hspace 5em;
+  }
+}
+
+/* title */
+.title {
+  text-align: center;
+  margin: 0 0 5em;
+
+  @media @mobile {
+    margin-bottom: 2em;
+  }
+}
+.title-main {
+  font-weight: 300;
+  font-size:2em;
+  margin: 0;
+}
+
+/* media */
+.mobile-only {
+  @media @not-mobile {
+    display: none;
+  }
+}
+.desktop-only {
+  @media @mobile {
+    display: none;
+  }
+}
+
+
