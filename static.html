@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lunch app</title>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="stylesheet" href="assets/0.0.0/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+</head>
+<body class="page">
+
+<div id="alert"></div>
+
+<div id="content">
+
+    <div class="wrapper">
+
+        <h1 class="logo"><img src="assets/0.0.0/images/die-wurststube.png" alt="die Wurschtstube"></h1>
+
+        <div class="title">
+            <h2 class="title-main">Monday 9.11.2015</h2>
+        </div>
+
+        <div class="list">
+
+            <div class="list-title">
+                <h3 class="list-title-main">Hey <strong>Katharina</strong>, what would you like for lunch?</h3>
+            </div>
+
+            <div class="list-items">
+
+                <div class="list-item">
+                    <label class="list-item-label">
+                        <input type="checkbox">
+                        Baguette
+                    </label>
+                    <a target="_blank" href="https://google.com" class="list-item-link fa fa-cutlery"></a>
+                </div>
+
+                <div class="list-item">
+                    <label class="list-item-label">
+                        <input type="checkbox">
+                        UFO
+                    </label>
+                </div>
+
+                <div class="list-item">
+                    <label class="list-item-label">
+                        <input type="checkbox">
+                        Also we should handle a situation of an extremely long restaurant name
+                    </label>
+                    <a target="_blank" href="https://google.com" class="list-item-link fa fa-cutlery"></a>
+                </div>
+
+                <div class="list-item">
+                    <div class="list-item-btn">
+                        <i class="fa fa-plus-circle"></i>
+                        Add proposal
+                    </div>
+                </div>
+
+                <div class="list-item">
+                    <div class="form">
+                        <div class="form-title">Add proposal</div>
+                        <ul class="radios radios-hor">
+                            <li>
+                                <label>
+                                    <input type="radio" name="r1" value="v1" checked="checked">
+                                    I want cook...
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="radio" name="r1" value="v2">
+                                    I want to eat at...
+                                </label>
+                            </li>
+                        </ul>
+
+                        <div class="input">
+                            <label for="input-restaurant">Restaurant</label>
+                            <input type="text" id="input-restaurant">
+                        </div>
+
+                        <div class="input">
+                            <label for="input-restaurant-link">Website</label>
+                            <input type="text" id="input-restaurant-link">
+                        </div>
+
+                        <div class="form-controls">
+                            <div class="form-controls-side">
+                                <label>
+                                    <input type="checkbox">
+                                    Save restaurant
+                                </label>
+                            </div>
+                            <div class="form-controls-main">
+                                <button class="btn btn-secondary">cancel</button>
+                                <button class="btn">Done</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="list-controls">
+                <button class="btn btn-L">Send</button>
+            </div>
+
+        </div>
+
+        <div class="PAGE"></div>
+
+
+        <div class="list">
+
+            <div class="list-title">
+                <h3 class="list-title-main">Hey <strong>Katharina</strong>, what would you like for lunch?</h3>
+            </div>
+
+            <div class="rating-header">
+                <ul class="rating">
+                    <li class="rating-item"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></li>
+                    <li class="rating-item"><i class="fa fa-star"></i><i class="fa fa-star"></i></li>
+                    <li class="rating-item"><i class="fa fa-star"></i></li>
+                    <li class="rating-item rating-item-negative"><i class="fa fa-frown-o"></i></li>
+                </ul>
+            </div>
+
+            <div class="list-items">
+
+                <div class="list-item">
+                    <div class="list-item-rating">
+                        <div class="list-item-name">Baguette</div>
+                        <ul class="rating">
+                            <li class="rating-item"><label><input type="radio" name="r2" value="v1"></label></li>
+                            <li class="rating-item"><label><input type="radio" name="r2" value="v2"></label></li>
+                            <li class="rating-item"><label><input type="radio" name="r2" value="v3"></label></li>
+                            <li class="rating-item rating-item-negative"><label><input type="radio" name="r2" value="v4"></label></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="list-item list-item-selected">
+                    <div class="list-item-rating">
+                        <div class="list-item-name">UFO</div>
+                        <ul class="rating">
+                            <li class="rating-item"><label><input type="radio" name="r3" value="v1" checked="checked"></label></li>
+                            <li class="rating-item"><label><input type="radio" name="r3" value="v2"></label></li>
+                            <li class="rating-item"><label><input type="radio" name="r3" value="v3"></label></li>
+                            <li class="rating-item rating-item-negative"><label><input type="radio" name="r3" value="v4"></label></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="list-item list-item-selected">
+                    <div class="list-item-rating">
+                        <div class="list-item-name">Madhuban</div>
+                        <ul class="rating">
+                            <li class="rating-item"><label><input type="radio" name="r4" value="v1"></label></li>
+                            <li class="rating-item"><label><input type="radio" name="r4" value="v2" checked="checked"></label></li>
+                            <li class="rating-item"><label><input type="radio" name="r4" value="v3"></label></li>
+                            <li class="rating-item rating-item-negative"><label><input type="radio" name="r4" value="v4"></label></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="list-item list-item-negative">
+                    <div class="list-item-rating">
+                        <div class="list-item-name">Also we should handle a situation of an extremely long restaurant name</div>
+                        <ul class="rating">
+                            <li class="rating-item"><label><input type="radio" name="r5" value="v1"></label></li>
+                            <li class="rating-item"><label><input type="radio" name="r5" value="v2"></label></li>
+                            <li class="rating-item"><label><input type="radio" name="r5" value="v3"></label></li>
+                            <li class="rating-item rating-item-negative"><label><input type="radio" name="r5" value="v4" checked="checked"></label></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="list-item">
+                    <div class="list-item-rating">
+                        <div class="list-item-name">Hähnchen-Erdnuss-Wok <small class="name">(KATHARINA)</small></div>
+                        <ul class="rating">
+                            <li class="rating-item"><label><input type="radio" name="r6" value="v1"></label></li>
+                            <li class="rating-item"><label><input type="radio" name="r6" value="v2"></label></li>
+                            <li class="rating-item"><label><input type="radio" name="r6" value="v3"></label></li>
+                            <li class="rating-item rating-item-negative"><label><input type="radio" name="r6" value="v4"></label></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="list-controls">
+                <button class="btn btn-L">Send</button>
+            </div>
+
+        </div>
+
+        <div class="PAGE"></div>
+
+        <div class="message message-card">
+            <i class="message-badge message-badge-ok"></i>
+            <div class="subtitle">Decision has beed made. Today will be</div>
+            <h2>Hähnchen-Erdnuss-Wok</h2>
+        </div>
+
+        <div class="PAGE"></div>
+
+        <div class="message">
+            <i class="message-badge message-badge-ok"></i>
+            <div class="message-subtitle">Everything successfully saved.</div>
+            <h2>See you later!</h2>
+        </div>
+
+        <div class="PAGE"></div>
+
+        <div class="message">
+            <i class="message-badge message-badge-bad"></i>
+            <div class="message-subtitle">Oh no!</div>
+            <h2>An error has occurred.</h2>
+        </div>
+
+    </div>
+
+
+
+</div>
+
+<div id="popup"></div>
+
+</body>
+</html>
