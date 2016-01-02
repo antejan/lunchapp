@@ -1,0 +1,10 @@
+<label class="list-item-label">
+    <input type="checkbox" {{#if checked}}checked{{/if}} />
+    {{#if meal}}
+        {{meal}} <small class="name">({{proposer}})</small>
+    {{else}}
+        {{name}}
+    {{/if}}
+</label>
+{{#if url}}<a target="_blank" href="{{url}}" class="list-item-link fa fa-cutlery"></a>{{/if}}
+{{#if recipe-url}}<a target="_blank" href="{{recipe-url}}" class="list-item-link fa fa-cutlery"></a>{{/if}}

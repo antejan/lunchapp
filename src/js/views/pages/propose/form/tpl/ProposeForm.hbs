@@ -1,0 +1,60 @@
+<div class="list-item-btn ui-btn-show-form">
+    <i class="fa fa-plus-circle"></i>
+    Add proposal
+</div>
+
+<div class="form hidden">
+    <div class="form-title">Add proposal</div>
+    <ul class="radios radios-hor">
+        <li>
+            <label class="check">
+                <input type="radio" name="proposal_type" value="cook" checked />
+                I want cook...
+            </label>
+        </li>
+        <li>
+            <label class="check">
+                <input type="radio" name="proposal_type" value="restaurant" />
+                I want to eat at...
+            </label>
+        </li>
+    </ul>
+
+    <div class="ui-form-cook">
+        <div class="input">
+            <label for="input-meal">Meal</label>
+            <input type="text" id="input-meal" name="meal" />
+        </div>
+
+        <div class="input">
+            <label for="input-recipe-link">Link to recipe</label>
+            <input type="text" id="input-recipe-link" name="recipe-url" />
+        </div>
+    </div>
+
+    <div class="ui-form-restaurant hidden">
+        <div class="input">
+            <label for="input-restaurant">Restaurant</label>
+            <input type="text" id="input-restaurant" name="name" />
+        </div>
+
+        <div class="input">
+            <label for="input-restaurant-link">Website</label>
+            <input type="text" id="input-restaurant-link" name="url" />
+        </div>
+    </div>
+
+    <div class="form-controls">
+        <div class="form-controls-side">
+            <label class="hidden ui-chk-save check">
+                <input type="checkbox"/>
+                Save<span class="desktop-only"> restaurant</span>
+            </label>
+        </div>
+        <div class="form-controls-main">
+            <button class="btn btn-secondary ui-btn-cancel">cancel</button>
+            <button class="btn ui-btn-done ui-btn-save">Done</button>
+        </div>
+    </div>
+
+</div>

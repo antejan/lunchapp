@@ -1,0 +1,9 @@
+{{view "../../base/BaseHeader" model=model}}
+
+<div class="list">
+    {{view "../ProposeTitle" model=model}}
+    {{view "../list/ProposeList" collection=mergedLunches state=model}}
+    {{view "../form/ProposeForm" collection=todayLunches state=model}}
+</div>
+
+{{view "../ProposeControls" model=model}}

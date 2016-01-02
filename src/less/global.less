@@ -32,12 +32,16 @@ html, body {
 #content {
   min-height:100%;
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .wrapper {
   min-height: 100%;
   max-width: 36em;
-  padding: 5em 2em;
+  width:100%;
+  box-sizing: border-box;
+  padding: 2em 2em 5em;
   margin: 0 auto;
 
   @media @mobile {
@@ -70,6 +74,11 @@ html, body {
   @media @mobile {
     display: none;
   }
+}
+
+/* hidden */
+.hidden {
+  display: none !important;
 }
 
 

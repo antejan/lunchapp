@@ -1,0 +1,118 @@
+import {Model} from 'backbone';
+import {AbstractLunches} from '../collection/AbstractLunches';
+
+/**
+ * @class LunchState
+ */
+export class LunchState extends Model {
+
+    /**
+     * @param {User} user
+     */
+    setUser(user) {
+        this.set('user', user);
+    }
+
+    /**
+     * @returns {User}
+     */
+    getUser() {
+        return this.get('user');
+    }
+
+    /**
+     * @param {TimeSource} timeSource
+     */
+    setTimeSource(timeSource) {
+        this.set('timeSource', timeSource);
+    }
+
+    /**
+     * @returns {TimeSource}
+     */
+    getTimeSource() {
+        return this.get('timeSource');
+    }
+
+    /**
+     * @param {SavedLunches} savedLunches
+     */
+    setSavedLunches(savedLunches) {
+        this.set('savedLunches', savedLunches);
+    }
+
+    /**
+     * @returns {SavedLunches}
+     */
+    getSavedLunches() {
+        return this.get('savedLunches');
+    }
+
+    /**
+     * @param {TodayLunches} todayLunches
+     */
+    setTodayLunches(todayLunches) {
+        this.set('todayLunches', todayLunches);
+    }
+
+    /**
+     * @returns {TodayLunches}
+     */
+    getTodayLunches() {
+        return this.get('todayLunches');
+    }
+
+    /**
+     * We nned to merge
+     * @returns {AbstractLunches}
+     */
+    getMergedLunches() {
+        var mergedLunches = new AbstractLunches();
+        mergedLunches.add(this.getSavedLunches().models);
+        mergedLunches.add(this.getTodayLunches().models, {merge: true});
+        this.listenTo(this.getSavedLunches(), 'add', () => {
+            mergedLunches.add(this.getSavedLunches().models, {merge: true});
+        });
+        return mergedLunches;
+    }
+
+    /**
+     * @param {Lunch} model
+     * @param {boolean} toggle
+     */
+    toggleProposeToday(model, toggle) {
+        if (toggle) {
+            this.getTodayLunches().add(model);
+        } else {
+            model.destroyInCollection()
+                .then(() => {
+                    this.getTodayLunches().remove(model);
+                });
+        }
+    }
+
+    /**
+     * Add new lunch to proposed
+     * @param lunch
+     */
+    proposeLunch(lunch, save) {
+        this.getTodayLunches().add(lunch.clone());
+        this.getSavedLunches().add(lunch);
+        if (save) {
+            console.log('saving');
+        }
+    }
+
+    /**
+     * If we get to propose state we need to reset our TodayLunches collection
+     */
+    prepareToPropose() {
+        let timeSource = this.getTimeSource();
+        if (!timeSource.isStartedDay()) {
+            this.getTodayLunches().invoke('destroy');
+            timeSource.saveStartedDay();
+        }
+
+    }
+
+}
