@@ -24,3 +24,22 @@
   animation-name: shake;
   will-change: transform;
 }
+
+
+@keyframes blinky {
+  from, to {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  30%, 90%  {
+    opacity: 1;
+  }
+}
+
+.blinky {
+  animation: blinky 1s infinite;
+}

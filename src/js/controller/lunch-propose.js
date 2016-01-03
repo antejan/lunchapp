@@ -15,12 +15,12 @@ router.on('route:propose', () => {
 
         resources.lunchState()
             .then((state) => {
-                state.prepareToPropose();
-
-                app.content.show(new ProposeLayout({
-                    model: state
-                }));
-                return true;
+                return state.prepareToPropose()
+                    .then(() => {
+                        app.content.show(new ProposeLayout({
+                            model: state
+                        }));
+                    });
             });
     });
 

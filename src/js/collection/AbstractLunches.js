@@ -10,10 +10,10 @@ export class AbstractLunches extends Collection {
      * @param {object[]} mock
      */
     initMock(mock) {
-        _.each(mock, (fileData) => {
-            let file = this.model.factoryFromData(fileData);
-            this.add(file);
-            file.save();
+        _.each(mock, (lunchData) => {
+            let lunch = this.model.factoryFromData(lunchData);
+            this.add(lunch);
+            lunch.save();
         });
     }
 

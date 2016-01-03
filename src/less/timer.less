@@ -1,0 +1,97 @@
+/* timer */
+.timer {
+  position: fixed;
+  left: @vspace;
+  top: @hspace;
+  z-index:5;
+
+  @media @mobile {
+    position:relative;
+    top:0;
+    left:0;
+    margin: @vspace @hspace 0;
+    text-align: center;
+  }
+
+  &-time {
+    display: inline-block;
+    font-weight: normal;
+    font-size: 19px;
+    width: 2.9em;
+
+    .fa {
+      font-size: 14px;
+      vertical-align: 1px;
+      opacity:.9;
+    }
+
+    .timer-blinky {
+      position: relative;
+      top:-.05em;
+      margin: 0 .05em;
+    }
+  }
+
+  &-stage {
+  }
+
+  &-controls {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top:-3px;
+    list-style: none;
+    margin: 0;
+    padding: 0 0 1px;
+    overflow: hidden;
+
+    li {
+      float: left;
+      margin: 0;
+      padding: 0;
+    }
+
+    button {
+      background: #fff;
+      border:1px solid rgba(0,0,0,.2);
+      box-shadow: 0 1px 0 0 #ccc;
+      font-size: 10px;
+      min-height: 16px;
+      line-height:20px;
+      width: 20px;
+      padding: 2px 4px;
+      box-sizing: content-box;
+      text-align: center;
+      cursor: pointer;
+      outline: none;
+      position: relative;
+      transition:border-color .1s ease;
+
+      &:hover {
+        border: 1px solid rgba(0,0,0,.3);
+        z-index:2;
+      }
+      &:active {
+        transition:none;
+        top:1px;
+        box-shadow: none;
+      }
+
+      &.pushed {
+        top:1px;
+        box-shadow: none;
+        pointer-events: none;
+      }
+    }
+
+    li + li {
+      margin-left: -1px;
+    }
+    li:first-child button {
+      border-radius: @radius 0 0 @radius;
+    }
+    li:last-child button {
+      border-radius: 0 @radius @radius 0;
+    }
+  }
+}

@@ -63,6 +63,17 @@ export class ProposeForm extends LayoutView {
         if (!this.model.get('name') && !this.model.get('meal')) {
             this.$('input[name=' + (type === 'cook' ? 'meal' : 'name') + ']').focus();
         } else {
+
+            // remove unused fields
+            if (type === 'cook') {
+                this.model.unset('name');
+                this.model.unset('url');
+            } else {
+                this.model.unset('meal');
+                this.model.unset('recipe-url');
+            }
+
+            // save
             this.options.state.proposeLunch(this.model, save);
 
             // clearing and closing form

@@ -94,12 +94,13 @@ export class LunchState extends Model {
     /**
      * Add new lunch to proposed
      * @param lunch
+     * @param {boolean} save
      */
     proposeLunch(lunch, save) {
         this.getTodayLunches().add(lunch.clone());
         this.getSavedLunches().add(lunch);
         if (save) {
-            console.log('saving');
+            lunch.save();
         }
     }
 
@@ -109,10 +110,13 @@ export class LunchState extends Model {
     prepareToPropose() {
         let timeSource = this.getTimeSource();
         if (!timeSource.isStartedDay()) {
-            this.getTodayLunches().invoke('destroy');
             timeSource.saveStartedDay();
+            return Promise.all(this.getTodayLunches().invoke('destroyInCollection'))
+                .then(() => {
+                    this.getTodayLunches().reset();
+                });
         }
-
+        return Promise.resolve();
     }
 
 }

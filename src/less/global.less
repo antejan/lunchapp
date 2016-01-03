@@ -41,11 +41,11 @@ html, body {
   max-width: 36em;
   width:100%;
   box-sizing: border-box;
-  padding: 2em 2em 5em;
+  padding: 3em 2em 5em;
   margin: 0 auto;
 
   @media @mobile {
-    padding: 2em @hspace 5em;
+    padding: 1em @hspace 5em;
   }
 }
 
@@ -81,4 +81,12 @@ html, body {
   display: none !important;
 }
 
+.hidden-o {
+  opacity: 0;
+}
+
+/* warning */
+.warning {
+  transition: opacity 1s ease;
+}
 

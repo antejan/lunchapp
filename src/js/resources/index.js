@@ -3,6 +3,7 @@ import {SavedLunches} from '../collection/SavedLunches';
 import {TodayLunches} from '../collection/TodayLunches';
 import {TimeSource} from '../model/TimeSource';
 import {User} from '../model/User';
+import {Timer} from '../views/components/timer/Timer';
 import {memoize} from 'lodash';
 
 var resources = {
@@ -20,6 +21,11 @@ var resources = {
                 state.setUser(user);
 
                 // time for middlewares like auth
+
+                // showing time controls
+                Timer.show({
+                    model: timeSource
+                });
 
                 // dependencies
                 return Promise.all([this.savedLunches(), this.todayLunches()])
