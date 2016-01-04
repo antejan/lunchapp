@@ -2,7 +2,19 @@
 .animated {
   animation-duration: .5s;
   animation-fill-mode: both;
-  pointer-events: none;
+}
+
+.delay0 {
+  animation-delay: 0s;
+}
+.delay1 {
+  animation-delay: .2s;
+}
+.delay2 {
+  animation-delay: .4s;
+}
+.delay3 {
+  animation-delay: .6s;
 }
 
 @keyframes shake {
@@ -23,8 +35,45 @@
   .animated;
   animation-name: shake;
   will-change: transform;
+  pointer-events: none;
 }
 
+
+@keyframes fadeInUp2 {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 10px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.fadeInUp2 {
+  .animated;
+  animation-duration: 1.5s;
+  animation-name: fadeInUp2;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 50px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.fadeInUp {
+  .animated;
+  animation-duration: 1.5s;
+  animation-name: fadeInUp;
+}
 
 @keyframes blinky {
   from, to {
@@ -42,4 +91,70 @@
 
 .blinky {
   animation: blinky 1s infinite;
+}
+
+
+@keyframes fillWidth {
+  from {
+    width:0;
+  }
+
+  to {
+    width:100%;
+  }
+}
+
+.fillWidth {
+  .animated;
+  animation-duration: 20s;
+  animation-timing-function: linear;
+  animation-name: fillWidth;
+}
+
+
+/* propose page */
+.wrapper-propose {
+  .title {
+    .fadeInUp;
+  }
+  .list-title {
+    .fadeInUp;
+    .delay1;
+  }
+  .list-items {
+    .list-item {
+      .fadeInUp;
+      animation-delay: .2s;
+
+      &:nth-child(1) {
+        animation-delay: .25s;
+      }
+      &:nth-child(2) {
+        animation-delay: .30s;
+      }
+      &:nth-child(3) {
+        animation-delay: .35s;
+      }
+      &:nth-child(4) {
+        animation-delay: .40s;
+      }
+      &:nth-child(5) {
+        animation-delay: .45s;
+      }
+      &:nth-child(5) ~ .list-item {
+        animation-delay: .55s;
+      }
+    }
+
+    + .list-item {
+      .fadeInUp2;
+      animation-duration: 1s;
+      animation-delay: 1.2s;
+    }
+  }
+  .list-controls {
+    .fadeInUp2;
+    animation-duration: 1s;
+    animation-delay: 1.5s;
+  }
 }

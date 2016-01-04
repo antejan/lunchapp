@@ -6,15 +6,34 @@ import {router} from '../../../router';
     template,
     className: 'wrapper',
     ui: {
-        'button': 'button'
+        'button': 'button',
+        'buttonFiller': '.btn-filler'
     },
     events: {
-        'click @ui.button': 'onButtonClick'
-    }
+        'click @ui.button': 'goNext'
+    },
+    timeLeft: 20
 })
 export class TimeIsUp extends LayoutView {
 
-    onButtonClick() {
+    onRender() {
+        this.tick();
+    }
+
+    tick() {
+        if (this.isDestroyed) {
+            return;
+        }
+
+        if (this.timeLeft > 0) {
+            this.timeLeft -= 1;
+            setTimeout(this.tick.bind(this), 1000);
+        } else {
+            this.goNext();
+        }
+    }
+
+    goNext() {
         router.navigate('/', {trigger: true});
     }
 

@@ -51,7 +51,7 @@ export class ProposeForm extends LayoutView {
 
     onInput(event) {
         let name = event.target.name;
-        let value = $(event.target).val();
+        let value = $.trim($(event.target).val());
         this.model.set(name, value);
     }
 
