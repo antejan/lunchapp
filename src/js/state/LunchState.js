@@ -63,6 +63,13 @@ export class LunchState extends Model {
     }
 
     /**
+     * @returns {Lunch[]|[]}
+     */
+    getLunchesWithMaxPoints() {
+        return this.getTodayLunches().getLunchesWithMaxPoints();
+    }
+
+    /**
      * We nned to merge
      * @returns {AbstractLunches}
      */

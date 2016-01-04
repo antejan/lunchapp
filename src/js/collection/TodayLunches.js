@@ -1,5 +1,6 @@
 import {AbstractLunches} from './AbstractLunches';
 import {Prototype, LocalStorage} from 'backbone';
+import {max} from 'lodash';
 
 @Prototype({
     url: '/api/lunch/today',
@@ -15,6 +16,14 @@ export class TodayLunches extends AbstractLunches {
         return this.some((lunch) => {
             return lunch.getPoints()[user.getFirstName()];
         });
+    }
+
+    /**
+     * Calc today's choose
+     */
+    getLunchesWithMaxPoints() {
+        let maxPoints = max(this.pluck('totalPoints'));
+        return this.filter({totalPoints: maxPoints});
     }
 
     static factory(options) {

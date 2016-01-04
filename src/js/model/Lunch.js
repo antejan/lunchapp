@@ -1,4 +1,5 @@
 import {Model, Prototype} from 'backbone';
+import {sum} from 'lodash';
 
 @Prototype({
     defaults: {
@@ -16,6 +17,14 @@ export class Lunch extends Model {
         let lunchPoints = this.getPoints();
         lunchPoints[user.getFirstName()] = points;
         this.setPoints(lunchPoints);
+        this.updateTotalPoints();
+    }
+
+    /**
+     * Sum up all points
+     */
+    updateTotalPoints() {
+        this.set('totalPoints', sum(this.getPoints()));
     }
 
     /**

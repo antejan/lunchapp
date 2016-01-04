@@ -1,0 +1,14 @@
+<div class="message message-card">
+    <i class="message-badge message-badge-ok"></i>
+    <div class="subtitle">Decision has beed made. Today will be</div>
+    {{#each todayChooses}}
+        {{#if @index}}<p class="message-or">or</p>{{/if}}
+        <h2>
+            {{#if meal}}
+                {{meal}} <small class="name">({{proposer}})</small>
+            {{else}}
+                {{name}}
+            {{/if}}
+        </h2>
+    {{/each}}
+</div>

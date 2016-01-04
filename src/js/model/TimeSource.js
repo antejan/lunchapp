@@ -188,11 +188,13 @@ export class TimeSource extends Model {
         if (currentStage == 'result') {
             this.goNextDay();
         } else {
-            if (leftInStage <= 5 * 60 * 1000) {
-                this.incrementTimeSmooth(leftInStage);
-            } else {
-                this.incrementTimeSmooth(leftInStage - (5 * 60 * 1000));
-            }
+            this.incrementTimeSmooth(leftInStage);
+
+            //if (leftInStage <= 5 * 60 * 1000) {
+            //    this.incrementTimeSmooth(leftInStage);
+            //} else {
+            //    this.incrementTimeSmooth(leftInStage - (5 * 60 * 1000));
+            //}
             this.restartTicks();
         }
     }

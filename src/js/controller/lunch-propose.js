@@ -9,6 +9,7 @@ router.on('route:propose', () => {
 
     if (stage !== 'propose') {
         router.navigate('/', {trigger: true});
+        return;
     }
 
     require(['../views/pages/propose/ProposeLayout'], function ({ProposeLayout}) {

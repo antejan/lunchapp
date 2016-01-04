@@ -9,6 +9,7 @@ router.on('route:choose', () => {
 
     if (stage !== 'choose') {
         router.navigate('/', {trigger: true});
+        return;
     }
 
     require(['../views/pages/choose/ChooseLayout'], function ({ChooseLayout}) {
