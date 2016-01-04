@@ -15,9 +15,9 @@ export class TimeSource extends Model {
         this.setTime(new Date());
         this.resetTime();
 
-        this.startTicks();
         this.tickEvery = 1000;
         this.msOnTick = 1000;
+        this.startTicks();
     }
 
     /**

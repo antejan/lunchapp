@@ -89,10 +89,20 @@
   /* rating */
   &-rating {
     display: flex;
+    align-items: center;
 
     .rating {
       margin-right: -@hspace;
       flex-shrink: 0;
+    }
+
+    .list-item-name {
+      flex:1;
+    }
+    .list-item-link {
+      position: relative;
+      flex-shrink: 0;
+      margin:-@vspace/1.2 0;
     }
   }
 

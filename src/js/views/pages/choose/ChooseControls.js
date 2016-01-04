@@ -2,7 +2,7 @@ import {Prototype, LayoutView} from 'marionette';
 import {app} from '../../../app';
 import {SuccessSave} from '../message/SuccessSave';
 import {TimeIsUp} from '../message/TimeIsUp';
-import template from './tpl/ProposeControls.hbs';
+import template from './tpl/ChooseControls.hbs';
 
 /**
  * @property {LunchState} model
@@ -19,18 +19,18 @@ import template from './tpl/ProposeControls.hbs';
         'click @ui.button': 'onClickSave'
     }
 })
-export class ProposeControls extends LayoutView {
+export class ChooseControls extends LayoutView {
 
     initialize() {
         this.listenTo(this.model.getTimeSource(), 'tick', this.onTick);
     }
 
     onClickSave() {
-        if (this.model.getTodayLunches().length) {
+        if (this.model.getTodayLunches().haveUserPoints(this.model.getUser())) {
             this.model.getTodayLunches().invoke('save');
             app.content.show(new SuccessSave({
                 model: this.model,
-                waitForStage: 'choose'
+                waitForStage: 'result'
             }));
         } else {
             this.ui.button.addClass('shake');
@@ -41,12 +41,12 @@ export class ProposeControls extends LayoutView {
     }
 
     onTick() {
-        let timeLeft = this.model.getTimeSource().leftInStage('propose');
+        let timeLeft = this.model.getTimeSource().leftInStage('choose');
 
         if (timeLeft <= 0) {
             app.content.show(new TimeIsUp({
-                message: 'Suggest time was up to 11am.',
-                button: 'Go choose something!'
+                message: 'Choose time was up to 11:30am.',
+                button: 'Show results!'
             }));
             return;
         }

@@ -1,0 +1,8 @@
+{{view "../../base/BaseHeader" model=model}}
+
+<div class="list">
+    {{view "../ChooseTitle" model=model}}
+    {{view "../list/ChooseList" collection=todayLunches state=model}}
+</div>
+
+{{view "../ChooseControls" model=model}}
